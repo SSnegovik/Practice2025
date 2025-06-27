@@ -1,0 +1,25 @@
+on:
+  push:
+  pull_request:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+        - uses: actions/checkout@v3
+
+        - uses: actions/setup-dotnet@v4
+          with:
+            dotnet-version: '8.0.x'
+
+        - name: Restore
+          working-directory: practice2025 
+          run: dotnet restore
+
+        - name: Build
+          working-directory: practice2025
+          run: dotnet build
+
+        - name: Tests
+          working-directory: practice2025
+          run: dotnet test
