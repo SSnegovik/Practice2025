@@ -49,11 +49,11 @@ public class AttributeReflectionTests
         var output = new StringWriter();
         Console.SetOut(output);
 
-        var expectedOutput = "Имя класса: Пример класса\r\n" +
-                            "Версия класса: 1.0\r\n" +
-                            "get_Number - Имя метода: нет\r\n" +
-                            "TestMethod - Имя метода: Тестовый метод\r\n" +
-                            "Number - Имя свойства: Числовое свойство\r\n";
+        var expectedOutput = "Имя класса: Пример класса\n" +
+                            "Версия класса: 1.0\n" +
+                            "get_Number - Имя метода: нет\n" +
+                            "TestMethod - Имя метода: Тестовый метод\n" +
+                            "Number - Имя свойства: Числовое свойство\n";
 
         ReflectionHelper.PrintTypeInfo(typeof(SampleClass));
 
