@@ -12,7 +12,7 @@ public class AttributeReflectionTests
         var type = typeof(SampleClass);
         var attribute = type.GetCustomAttribute<DisplayNameAttribute>();
         Assert.NotNull(attribute);
-        Assert.Equal("Пример класса", attribute.DisplayName);
+        Assert.Equal("РџСЂРёРјРµСЂ РєР»Р°СЃСЃР°", attribute.DisplayName);
     }
 
     [Fact]
@@ -21,7 +21,7 @@ public class AttributeReflectionTests
         var method = typeof(SampleClass).GetMethod("TestMethod");
         var attribute = method.GetCustomAttribute<DisplayNameAttribute>();
         Assert.NotNull(attribute);
-        Assert.Equal("Тестовый метод", attribute.DisplayName);
+        Assert.Equal("РўРµСЃС‚РѕРІС‹Р№ РјРµС‚РѕРґ", attribute.DisplayName);
     }
 
     [Fact]
@@ -30,7 +30,7 @@ public class AttributeReflectionTests
         var prop = typeof(SampleClass).GetProperty("Number");
         var attribute = prop.GetCustomAttribute<DisplayNameAttribute>();
         Assert.NotNull(attribute);
-        Assert.Equal("Числовое свойство", attribute.DisplayName);
+        Assert.Equal("Р§РёСЃР»РѕРІРѕРµ СЃРІРѕР№СЃС‚РІРѕ", attribute.DisplayName);
     }
 
     [Fact]
@@ -49,11 +49,11 @@ public class AttributeReflectionTests
         var output = new StringWriter();
         Console.SetOut(output);
 
-        var expectedOutput = "Имя класса: Пример класса\r\n" +
-                            "Версия класса: 1.0\r\n" +
-                            "get_Number - Имя метода: нет\r\n" +
-                            "TestMethod - Имя метода: Тестовый метод\r\n" +
-                            "Number - Имя свойства: Числовое свойство\r\n";
+        var expectedOutput = "РРјСЏ РєР»Р°СЃСЃР°: РџСЂРёРјРµСЂ РєР»Р°СЃСЃР°\r\n" +
+                            "Р’РµСЂСЃРёСЏ РєР»Р°СЃСЃР°: 1.0\r\n" +
+                            "get_Number - РРјСЏ РјРµС‚РѕРґР°: РЅРµС‚\r\n" +
+                            "TestMethod - РРјСЏ РјРµС‚РѕРґР°: РўРµСЃС‚РѕРІС‹Р№ РјРµС‚РѕРґ\r\n" +
+                            "Number - РРјСЏ СЃРІРѕР№СЃС‚РІР°: Р§РёСЃР»РѕРІРѕРµ СЃРІРѕР№СЃС‚РІРѕ\r\n";
 
         ReflectionHelper.PrintTypeInfo(typeof(SampleClass));
 
