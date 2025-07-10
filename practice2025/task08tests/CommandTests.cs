@@ -11,7 +11,7 @@ public class FileSystemCommandsTests
         File.WriteAllText(Path.Combine(testDir, "test2.txt"), "World");
 
         var command = new DirectorySizeCommand(testDir);
-        command.Execute(); // Проверяем, что не возникает исключений
+        command.Execute(); // РџСЂРѕРІРµСЂСЏРµРј, С‡С‚Рѕ РЅРµ РІРѕР·РЅРёРєР°РµС‚ РёРєР»СЋС‡РµРЅРёР№
 
         Assert.True(command.Size > 0);
 
@@ -27,7 +27,7 @@ public class FileSystemCommandsTests
         File.WriteAllText(Path.Combine(testDir, "file2.log"), "Log");
 
         var command = new FindFilesCommand(testDir, "*.txt");
-        command.Execute(); // Должен найти 1 файл
+        command.Execute(); // Р”РѕР»Р¶РµРЅ РЅР°Р№С‚Рё 1 С„Р°Р№Р»
 
         var Files = Directory.GetFiles(testDir, "*.txt");
         Assert.Single(Files);
