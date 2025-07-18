@@ -33,7 +33,7 @@ public class DefiniteIntegral
         return total;
     }
 
-    private static double CalculateDefiniteIntegral(double a, double b, Func<double, double> function, double step)
+    public static double CalculateDefiniteIntegral(double a, double b, Func<double, double> function, double step)
     {
         double sum = 0.0;
         double x = a;
